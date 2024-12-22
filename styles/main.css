@@ -1,0 +1,356 @@
+@font-face {
+  font-family: "kaushan";
+  src: url("../../assets/fonts/kaushan/KaushanScript-Regular.otf")
+    format("opentype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: auto;
+  position: relative;
+}
+
+.light {
+  background: #346148;
+  color: #f5f3f5;
+}
+
+.dark {
+  background: #302b27;
+  color: rgba(245, 243, 245, 0.8);
+}
+.dark for-dark-mode {
+  background: #302b27 !important;
+}
+
+header {
+  position: relative;
+}
+
+section {
+  padding: 30px;
+  margin-top: 20px;
+}
+section p {
+  font-size: 1.1rem;
+  margin-top: 25px;
+}
+
+section:first-child {
+  margin-top: 120px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  min-width: 100%;
+  padding: 20px;
+}
+nav button {
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+}
+nav .logo,
+nav .menu-btn,
+nav .toggle-mode {
+  padding: 10px;
+}
+nav .logo {
+  font-size: 1.5rem;
+  color: #444444;
+  pointer-events: none;
+  font-family: kaushan;
+}
+nav .scroll-to {
+  position: fixed;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+  padding: 0;
+  margin: 0;
+  z-index: 9;
+}
+nav .scroll-to ul {
+  display: flex;
+  list-style-type: none;
+  gap: 5px;
+  padding: 5px;
+  background: #f5f3f5;
+  border-radius: 10px 10px 0 0;
+}
+nav .scroll-to ul li {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 2px solid #346148;
+  color: #444444;
+  transition: background 0.3s ease-in-out;
+}
+nav .menu-dialog {
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(400%, 400%);
+  background: #f5f3f5;
+  border-radius: 10px;
+  width: 300px;
+  height: fit-content;
+  color: white;
+  transition: transform 0.5s ease-in-out;
+  z-index: 12;
+}
+
+.grid-about-me {
+  display: block;
+}
+
+.projects {
+  z-index: 1;
+  
+}
+
+.grid-project {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+  margin-top: 40px;
+}
+.grid-project div {
+  font-size: 30px;
+  color: #ffffff;
+  text-align: center;
+  min-height: 250px;
+  border-radius: 10px;
+  border: 2px solid #f5f3f5;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+.grid-project div:hover {
+  transform: translateY(-20px);
+  z-index: 4;
+  transition: all 0.3s ease-in-out 0s;
+  outline: 2px solid #f5f3f5;
+  outline-offset: 2px;
+}
+.grid-project div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+.grid-project div button {
+  position: absolute;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: 2px solid #f5f3f5;
+  background: #346148;
+  color: #f5f3f5;
+  transition: padding 0.3s ease-in-out;
+}
+.grid-project div button:hover {
+  padding: 16px 32px;
+}
+.grid-project div .btn-demo {
+  bottom: 20px;
+  left: 20px;
+  border-radius: 10px 0 0 10px;
+}
+.grid-project div .btn-source-code {
+  bottom: 20px;
+  right: 20px;
+  border-radius: 0 10px 10px 0;
+}
+.grid-project div .project-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px 10px;
+}
+.grid-project div .project-title:hover {
+  text-decoration-color: #f5f3f5;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+form {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  z-index: 2;
+  padding: 20px;
+  background: grey;
+  border-radius: 10px;
+  border: 2px solid #f5f3f5;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 5px;
+  background: #f5f3f5;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(68, 68, 68, 0.8);
+}
+form label {
+  font-weight: bold;
+  margin: 6px 0 2px 0;
+  display: inline-block;
+}
+form label span {
+  color: red;
+  font-size: 1rem;
+  margin-left: 4px;
+  display: inline-block;
+}
+form label:first-child {
+  margin-top: 0;
+}
+form .btn {
+  border: 2px solid #f5f3f5;
+  width: 60%;
+  padding: 7px 14px;
+  background: #346148;
+  color: #f5f3f5;
+  margin-top: 8px;
+  border-radius: 0 0 5px 5px;
+}
+
+.wave-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+.wave-footer svg {
+  position: relative;
+  display: block;
+  width: calc(171% + 1.3px);
+  height: 500px;
+}
+
+.wave-footer .shape-fill {
+  fill: #000000;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .wave-footer svg {
+    width: calc(154% + 1.3px);
+    height: 102px;
+  }
+}
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(163% + 1.3px);
+  height: 104px;
+  z-index: -1;
+}
+
+.wave .shape-fill {
+  fill: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .wave svg {
+    width: calc(215% + 1.3px);
+    height: 209px;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .logo span {
+    font-size: 1.1rem;
+  }
+  .desktop-menus {
+    display: none;
+  }
+}
+@media (min-width: 767px) {
+  .grid-about-me {
+    display: grid;
+    gap: 80px;
+    grid-template-columns: auto 1fr;
+  }
+  .about-me-text {
+    border-right: 2px solid #f5f3f5;
+    padding-right: 5px;
+    padding-right: 20px;
+  }
+  .menu-desktop {
+    border: none;
+    font-weight: normal;
+  }
+  .menu-btn {
+    display: none;
+  }
+
+  .menu-dialog {
+    display: none;
+  }
+  form {
+    width: 400px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    margin: auto;
+    max-width: 1200px;
+    min-height: 100vh;
+    box-shadow: 1px 1px 5px #f5f3f5;
+  }
+}
+.charan-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 200px;
+  height: 200px; 
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f5f3f5;
+}
+
+.charan-image img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  object-position: center;
+}
